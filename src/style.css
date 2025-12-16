@@ -1,7 +1,7 @@
 /* Titan One */
 @font-face {
   font-family: "Titan One";
-  src: url("public/Fonts/TitanOne-Regular.ttf") format("truetype");
+  src: url("../public/Fonts/TitanOne-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -9,7 +9,7 @@
 /* Pompiere */
 @font-face {
   font-family: "Pompiere";
-  src: url("public/Fonts/Pompiere-Regular.ttf") format("truetype");
+  src: url("../public/Fonts/Pompiere-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -101,6 +101,7 @@ h4,
 h5,
 h6 {
   text-wrap: balance;
+  font-family: var(--ff-titan);
 }
 
 /*

@@ -1,3 +1,40 @@
+/* Titan One */
+@font-face {
+  font-family: "Titan One";
+  src: url("public/Fonts/TitanOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/* Pompiere */
+@font-face {
+  font-family: "Pompiere";
+  src: url("public/Fonts/Pompiere-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import "tailwindcss";
+
+@theme inline {
+  --font-titan: var(--ff-titan);
+  --font-pompiere: var(--ff-pompiere);
+
+  --color-vert-clair: var(--clr-light-green);
+  --color-blanc-casse: var(--clr-broken-white);
+}
+
+@layer base {
+  :root {
+    --ff-titan: "Titan One", sans-serif;
+    --ff-pompiere: "Pompiere", sans-serif;
+
+    --clr-broken-white: #f0e6d8;
+    --clr-light-green: hsl(145, 100% 50%);
+  }
+}
+
 /* 1. Use a more-intuitive box-sizing model */
 *,
 *::before,
@@ -72,46 +109,6 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
-}
-
-/* Titan One */
-@font-face {
-  font-family: "Titan One";
-  src: url("public/Fonts/TitanOne-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Pompiere&display=swap");
-
-/* Pompiere */
-@font-face {
-  font-family: "Pompiere";
-  src: url("public/Fonts/Pompiere-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@import "tailwindcss";
-
-@theme inline {
-  --font-titan: var(--ff-titan);
-  --font-pompiere: var(--ff-pompiere);
-
-  --color-vert-clair: var(--clr-light-green);
-  --color-blanc-casse: var(--clr-broken-white);
-}
-
-@layer base {
-  :root {
-    --ff-titan: "Titan One", sans-serif;
-    --ff-pompiere: "Pompiere", sans-serif;
-
-    --clr-broken-white: #f0e6d8;
-    --clr-light-green: hsl(145, 100% 50%);
-  }
 }
 
 /* CSS pour faire marcher le scroll horizontal */

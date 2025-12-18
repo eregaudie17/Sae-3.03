@@ -1,184 +1,132 @@
-/* Titan One */
-@font-face {
-  font-family: "Titan One";
-  src: url("../public/Fonts/TitanOne-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-/* Pompiere */
-@font-face {
-  font-family: "Pompiere";
-  src: url("../public/Fonts/Pompiere-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+/* Reset */
 
-@import "tailwindcss";
-
-@theme inline {
-  --font-titan: var(--ff-titan);
-  --font-pompiere: var(--ff-pompiere);
-
-  --color-vert-clair: var(--clr-light-green);
-  --color-blanc-casse: var(--clr-broken-white);
-}
-
-@layer base {
-  :root {
-    --ff-titan: "Titan One", sans-serif;
-    --ff-pompiere: "Pompiere", sans-serif;
-
-    --clr-broken-white: #f0e6d8;
-    --clr-light-green: hsl(145, 100% 50%);
-  }
-}
-
-/* 1. Use a more-intuitive box-sizing model */
+/* Box sizing rules */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* 2. Remove default margin */
-* {
-  margin: 0;
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
-/* 3. Enable keyword animations */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    interpolate-size: allow-keywords;
-  }
-}
-
-body {
-  /* 4. Add accessible line-height */
-  line-height: 1.5;
-  /* 5. Improve text rendering */
-  -webkit-font-smoothing: antialiased;
-}
-
-/* 6. Improve media defaults */
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-/* 7. Inherit fonts for form controls */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* 8. Avoid text overflows */
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
 p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
 }
 
-/* 9. Improve line wrapping */
-p {
-  text-wrap: pretty;
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
 }
+
+/* Set core body defaults */
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: var(--ff-pompiere);
+  color: var(--clr-dark);
+}
+
+/* Set shorter line heights on headings and interactive elements */
 h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
   text-wrap: balance;
   font-family: var(--ff-titan);
 }
 
-/*
-  10. Create a root stacking context
-*/
-#root,
-#__next {
-  isolation: isolate;
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
 }
 
-/* CSS pour faire marcher le scroll horizontal */
-body {
-  margin: 0;
-  height: 100vh;
-}
-.wrapper {
-  overflow-x: hidden;
-  position: relative;
-}
-* {
-  box-sizing: border-box;
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
 }
 
-svg {
-  position: absolute;
-  top: 12em;
-  left: 10vw;
-  width: 50vw;
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
 
-  .mask {
-    width: 0;
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+@font-face {
+  font-family: "Titan One";
+  src: url(../public/Fonts/TitanOne-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Pompiere";
+  src: url(../public/Fonts/Pompiere-Regular.ttf) format("truetype");
+}
+
+@import "tailwindcss";
+
+@theme inline {
+  --font-family-titan: var(--ff-titan);
+  --font-family-pompiere: var(--ff-pompiere);
+
+  --color-bg: var(--clr-broken-white);
+
+  --color-light: var(--clr-broken-white);
+  --color-dark: var(--clr-dark);
+  --color-accent: var(--clr-orange);
+}
+
+@layer base {
+  :root {
+    --ff-titan: "Titan One", cursive;
+    --ff-pompiere: "Pompiere", cursive;
+
+    --clr-broken-white: #f0e6d8;
+    --clr-dark: #1e1e1e;
+    --clr-orange: #c28455;
   }
-}
-
-.container {
-  display: flex;
-  width: 300vw;
-
-  .col {
-    display: flex;
-    gap: 3em;
-
-    p {
-      font-size: 0.8rem;
-    }
-  }
-
-  .pin {
-    width: 100vw;
-    padding: 20vw 10vw;
-
-    h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
-
-    p {
-      font-size: 1.2rem;
-      width: 50vw;
-    }
-
-    ul {
-      list-style-type: none;
-      display: flex;
-      gap: 3em;
-      width: 100%;
-      height: 300px;
-      padding: 0;
-
-      li {
-        border-radius: 0.3em;
-        flex-grow: 1;
-      }
-    }
-  }
-}
-
-section {
-  height: 100vh;
 }

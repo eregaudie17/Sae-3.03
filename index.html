@@ -3,198 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- CSS -->
     <link href="/src/style.css" rel="stylesheet" />
-
-    <!-- GSAP -->
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-    <script>
-      gsap.registerPlugin(ScrollTrigger);
-    </script>
+    <title>Le tourisme : un rêve dangereux</title>
   </head>
-
-  <body class="overflow-x-hidden font-pompiere bg-blanc-casse">
-    <!-- Nav bar -->
-    <nav class="w-full h-18 bg-blue-400 flex items-center pl-4">
-      <p class="text-2xl w-95/100">
-        <a href="index.html">Le tourisme: un rêve dangereux</a>
-      </p>
-      <a href="about.html" class="underline hover:text-blue-800">About</a>
-    </nav>
-
-    <!-- Section 1: salut -->
-    <section class="relativ min-h-screen overflow-hidden">
-      <img
-        src="public/Image/Tache-jaune.svg"
-        alt="rel"
-        class="absolute top-0 left-0 w-full h-full scale-70"
-      />
-
-      <img
-        src="public/Image/B-hello.svg"
-        alt="rel"
-        class="absolute top-[45%] left-[50%] transform -translate-x-5/8 -translate-y-3/8 w-[30%] max-w-xs scale-45"
-      />
-
-      <p
-        class="absolute top-[50%] left-[50%] transform translate-x-1/2 -translate-y-5/2 text-white"
-      >
-        Salut ! <br />
-        Viens voyager avec moi
-      </p>
-    </section>
-
-    <!-- Section 2: le rêve de voyager -->
-    <section class="bg-blue-900">
-      <h1 class="">Hello World</h1>
-      <script
-        src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js"
-        type="module"
-      ></script>
-
-      <canvas
-        id="dotlottie-canvas"
-        style="width: 500px; height: 500px"
-      ></canvas>
-
-      <script type="module">
-        import { DotLottie } from "@lottiefiles/dotlottie-web";
-        import { gsap } from "gsap";
-        import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-        // Enregistrer le plugin
-        gsap.registerPlugin(ScrollTrigger);
-
-        const dotLottie = new DotLottie({
-          canvas: document.querySelector("#dotlottie-canvas"),
-          src: "https://lottie.host/94d72cd6-4e73-4e27-a5a1-98a46f65ca57/hqEUUs93oQ.lottie",
-          autoplay: false, // Important : désactiver l'autoplay
-          loop: false,
-        });
-
-        // Attendre le chargement de l'animation
-        dotLottie.addEventListener("load", () => {
-          ScrollTrigger.create({
-            trigger: "#dotlottie-canvas", // L'élément qui déclenche l'action
-            start: "top center", // Début : haut de l'élément au centre de l'écran
-            end: "bottom center", // Fin : bas de l'élément au centre de l'écran
-            onEnter: () => dotLottie.play(),
-            onLeave: () => dotLottie.pause(),
-            onEnterBack: () => dotLottie.play(),
-            onLeaveBack: () => dotLottie.pause(),
-            // markers: true // Décommentez pour afficher les marqueurs de debug
-          });
-        });
-      </script>
-    </section>
-
-    <!-- Parti horizontal -->
-    <div class="wrapper">
-      <div class="container">
-        <svg
-          viewBox="0 0 900 10"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M9.89998 6C9.43671 8.28224 7.41896 10 5 10C2.23858 10 0 7.76142 0 5C0 2.23858 2.23858 0 5 0C7.41896 0 9.43671 1.71776 9.89998 4H445.1C445.563 1.71776 447.581 0 450 0C452.419 0 454.437 1.71776 454.9 4H890.1C890.563 1.71776 892.581 0 895 0C897.761 0 900 2.23858 900 5C900 7.76142 897.761 10 895 10C892.581 10 890.563 8.28224 890.1 6H454.9C454.437 8.28224 452.419 10 450 10C447.581 10 445.563 8.28224 445.1 6H9.89998Z"
-            fill="#D9D9D9"
-          />
-          <mask
-            id="mask0_0_1"
-            maskUnits="userSpaceOnUse"
-            x="0"
-            y="0"
-            width="900"
-            height="10"
-          >
-            <path
-              d="M9.89998 6C9.43671 8.28224 7.41896 10 5 10C2.23858 10 0 7.76142 0 5C0 2.23858 2.23858 0 5 0C7.41896 0 9.43671 1.71776 9.89998 4H445.1C445.563 1.71776 447.581 0 450 0C452.419 0 454.437 1.71776 454.9 4H890.1C890.563 1.71776 892.581 0 895 0C897.761 0 900 2.23858 900 5C900 7.76142 897.761 10 895 10C892.581 10 890.563 8.28224 890.1 6H454.9C454.437 8.28224 452.419 10 450 10C447.581 10 445.563 8.28224 445.1 6H9.89998Z"
-              fill="#D9D9D9"
-            />
-          </mask>
-          <g mask="url(#mask0_0_1)">
-            <rect class="mask" y="-49" height="99" fill="black" />
-          </g>
-        </svg>
-
-        <!-- Graphique + terre qui tourne -->
-        <section class="sec1 pin">
-          <span>Advanced</span>
-          <h1>Signify Elegance</h1>
-          <div class="col">
-            <p>Lorem ipsum dolor sit amet consectetur...</p>
-            <p>Lorem ipsum dolor sit amet consectetur...</p>
-          </div>
-        </section>
-
-        <!-- Terre pollution -->
-        <section class="sec2 pin">
-          <span class="anim">Advanced</span>
-          <h1 class="anim">Signify Elegance</h1>
-          <div class="col anim">
-            <p>Lorem ipsum dolor sit amet consectetur...</p>
-            <p>Lorem ipsum dolor sit amet consectetur...</p>
-          </div>
-        </section>
-
-        <!-- Le transport -->
-        <section class="sec3 pin">
-          <span class="anim">Advanced</span>
-          <h1 class="anim">Signify Elegance</h1>
-          <div class="col anim">
-            <p>Lorem ipsum dolor sit amet consectetur...</p>
-            <p>Lorem ipsum dolor sit amet consectetur...</p>
-          </div>
-        </section>
-
-        <!-- Les emplois -->
-        <section class="sec4 pin">
-          <span class="anim">Advanced</span>
-          <h1 class="anim">Signify Elegance</h1>
-          <div class="col anim">
-            <p>Lorem ipsum dolor sit amet consectetur...</p>
-            <p>Lorem ipsum dolor sit amet consectetur...</p>
-          </div>
-        </section>
-
-        <!-- L'avion -->
-        <section class="sec5 pin">
-          <span class="anim">Advanced</span>
-          <h1 class="anim">Signify Elegance</h1>
-          <div class="col anim">
-            x
-            <p>Lorem ipsum dolor sit amet consectetur...</p>
-            <p>Lorem ipsum dolor sit amet consectetur...</p>
-          </div>
-        </section>
-      </div>
-    </div>
-
-    <!-- La voiture -->
-    <section style="background-color: lightblue"></section>
-
-    <!-- France PIB -->
-    <section style="background-color: lightblue"></section>
-
-    <!-- Hotel pollution -->
-    <section style="background-color: lightblue"></section>
-
-    <!-- Plage bondée -->
-    <section style="background-color: lightblue"></section>
-
-    <!-- Graph émissions -->
-    <section style="background-color: lightblue"></section>
-
-    <!-- Bonhomme enervé -->
-    <section style="background-color: lightblue"></section>
-
-    <!-- Texte final  -->
-    <section style="background-color: lightblue"></section>
-
-    <!-- JS -->
-    <script src="/src/script.js"></script>
+  <body>
+    <header class="flex flex-row items-center px-10 py-8 bg-accent">
+      <h1 class="text-3xl text-light">Le tourisme : un rêve dangereux</h1>
+    </header>
+    <main class="flex flex-col w-full h-full bg-bg">
+      <section class="flex w-screen h-screen"></section>
+      <section class="flex w-screen h-screen"></section>
+      <section class="flex w-screen h-screen"></section>
+      <section class="flex w-screen h-screen"></section>
+      <section class="flex w-screen h-screen"></section>
+      <section class="flex w-screen h-screen"></section>
+      <section class="flex w-screen h-screen"></section>
+      <section class="flex w-screen h-screen"></section>
+      <section class="flex w-screen h-screen"></section>
+      <section class="flex w-screen h-screen"></section>
+      <section class="flex w-screen h-screen"></section>
+      <section class="flex w-screen h-screen"></section>
+    </main>
   </body>
 </html>
